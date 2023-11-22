@@ -3,6 +3,8 @@ import HomePage from "./page/HomePage";
 import CelebritiesPage from "./page/CelebritiesPage";
 import CelebrityDetailPage from "./page/CelebrityDetailPage";
 import RandomCelebrityPage from "./page/RandomCelebrityPage";
+import TvSpeakersPage from "./page/TvSpeakersPage";
+import CopyrightPage from "./page/CopyrightPage";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <Route path="/celebrities" element={<CelebritiesPage />} />
         <Route path="/celebrity/:id" element={<CelebrityDetailPage />} />
         <Route path="/celebrities/random" element={<RandomCelebrityPage />} />
+        <Route path="/speakers" element={<TvSpeakersPage />} />
+        <Route path="/copyright" element={<CopyrightPage />} />
       </Routes>
     </BrowserRouter>
   );
