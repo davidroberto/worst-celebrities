@@ -1,0 +1,42 @@
+export const shittyStars = [
+  {
+    id: 1,
+    name: "Vincent Lagaffe",
+    bio: "Le jet ski c'est mon dada",
+    img: "https://file1.telestar.fr/var/telestar/storage/images/2015/photos/vincent-lagaf-decroche-un-record-du-monde-grace-au-flyboard-!-photos-132229/989014-1-fre-FR/Vincent-Lagaf-decroche-un-record-du-monde-grace-au-Flyboard-!-Photos.jpg?alias=original",
+    publishedAt: "2020-10-10",
+    isPickedByTeam: true,
+  },
+  {
+    id: 2,
+    name: "Justin Bieber",
+    bio: "hahahahahcedfplêd",
+    img: "https://media.gqmagazine.fr/photos/640b1aa5bd6f5c8e911df9ea/master/pass/010322_JBHair_01.jpg",
+    publishedAt: "2021-10-10",
+    isPickedByTeam: true,
+  },
+  {
+    id: 3,
+    name: "Vincent Lagaffe",
+    bio: "Le jet ski c'est mon dada",
+    img: "https://file1.telestar.fr/var/telestar/storage/images/2015/photos/vincent-lagaf-decroche-un-record-du-monde-grace-au-flyboard-!-photos-132229/989014-1-fre-FR/Vincent-Lagaf-decroche-un-record-du-monde-grace-au-Flyboard-!-Photos.jpg?alias=original",
+    publishedAt: "2023-10-10",
+    isPickedByTeam: true,
+  },
+  {
+    id: 4,
+    name: "Justin Bieber",
+    bio: "hahahahahcedfplêd",
+    img: "https://media.gqmagazine.fr/photos/640b1aa5bd6f5c8e911df9ea/master/pass/010322_JBHair_01.jpg",
+    publishedAt: "2021-10-13",
+    isPickedByTeam: false,
+  },
+  {
+    id: 5,
+    name: "Vincent Lagaffe",
+    bio: "Le jet ski c'est mon dada",
+    img: "https://file1.telestar.fr/var/telestar/storage/images/2015/photos/vincent-lagaf-decroche-un-record-du-monde-grace-au-flyboard-!-photos-132229/989014-1-fre-FR/Vincent-Lagaf-decroche-un-record-du-monde-grace-au-Flyboard-!-Photos.jpg?alias=original",
+    publishedAt: "2020-12-10",
+    isPickedByTeam: true,
+  },
+];
