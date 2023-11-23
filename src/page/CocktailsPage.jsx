@@ -13,6 +13,13 @@ function CocktailsPage() {
       });
   }
 
+  const ingredientKeys = [];
+
+  for (let i = 1; i <= 15; i++) {
+    const ingredientKey = `strIngredient${i}`;
+    ingredientKeys.push(ingredientKey);
+  }
+
   return (
     <main>
       {cocktails ? (
@@ -21,6 +28,19 @@ function CocktailsPage() {
             return (
               <article>
                 <h2>{cocktail.strDrink}</h2>
+                <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
+                <p>Categorie : {cocktail.strCategory}</p>
+                <p>Instructions : {cocktail.strInstructions}</p>
+
+                <p>Ingrédients : </p>
+                <ul>
+                  {ingredientKeys.map((ingredientKey) => {
+                    // cocktail[ingredientKey] permet de récupérer la valeur
+                    // de la variable ingredientKey et de l'utiliser comme clé
+                    //  de l'objet cocktail === cocktail.strIngredient1
+                    return <li>{cocktail[ingredientKey]}</li>;
+                  })}
+                </ul>
               </article>
             );
           })}
