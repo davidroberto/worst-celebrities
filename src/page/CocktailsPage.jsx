@@ -9,12 +9,27 @@ function CocktailsPage() {
         return coktailsResponse.json();
       })
       .then((cocktailsInJs) => {
-        console.log(cocktailsInJs);
-        setCocktails(cocktailsInJs);
+        setCocktails(cocktailsInJs.drinks);
       });
   }
 
-  return <main>{cocktails ? <article>cocktails prêts</article> : <p>Cocktails en cours de chargement</p>}</main>;
+  return (
+    <main>
+      {cocktails ? (
+        <>
+          {cocktails.map((cocktail) => {
+            return (
+              <article>
+                <h2>{cocktail.strDrink}</h2>
+              </article>
+            );
+          })}
+        </>
+      ) : (
+        <p>Cocktails en cours de chargement</p>
+      )}
+    </main>
+  );
 }
 
 export default CocktailsPage;
