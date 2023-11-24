@@ -4,20 +4,16 @@ function CocktailsPage() {
   const [cocktails, setCocktails] = useState(null);
 
   if (!cocktails) {
-    fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=")
-      .then((coktailsResponse) => {
-        return coktailsResponse.json();
-      })
-      .then((cocktailsInJs) => {
-        setCocktails(cocktailsInJs.drinks);
-      });
-  }
-
-  const ingredientKeys = [];
-
-  for (let i = 1; i <= 15; i++) {
-    const ingredientKey = `strIngredient${i}`;
-    ingredientKeys.push(ingredientKey);
+    // fonction anonyme asynchrone (elle pas de nom)
+    // qui s'autoinvoque
+    // cela permet d'effectuer des opérations asynchrones (fetch etc)
+    // sans devoir créer une vraie fonction asynchrone
+    // (qu'on devrait appeler avec un await)
+    (async () => {
+      const coktailsResponse = await fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=");
+      const cocktailsInJs = await coktailsResponse.json();
+      setCocktails(cocktailsInJs.drinks);
+    })();
   }
 
   return (
@@ -31,16 +27,6 @@ function CocktailsPage() {
                 <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
                 <p>Categorie : {cocktail.strCategory}</p>
                 <p>Instructions : {cocktail.strInstructions}</p>
-
-                <p>Ingrédients : </p>
-                <ul>
-                  {ingredientKeys.map((ingredientKey) => {
-                    // cocktail[ingredientKey] permet de récupérer la valeur
-                    // de la variable ingredientKey et de l'utiliser comme clé
-                    //  de l'objet cocktail === cocktail.strIngredient1
-                    return <li>{cocktail[ingredientKey]}</li>;
-                  })}
-                </ul>
               </article>
             );
           })}
